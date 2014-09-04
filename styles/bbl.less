@@ -1,0 +1,113 @@
+h3, .author, .footer, .header {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.slide {
+  color: #FFFFFF;
+  background: no-repeat center;
+  background-size: cover !important;
+  background-color: #ffffff;
+  text-align: center;
+  &:after {
+    text-align: right;
+    padding-bottom: 0.25em;
+    padding-right: 0.25em;
+  }
+  h3 {
+    font-size: 74px;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20%;
+    text-align: center;
+  }
+  ul>li:before {
+    content: '';
+  }
+  .footer {
+    height: 48px;
+    width: calc(~"100% - 1em");
+    position: absolute;
+    bottom: -48px;
+    padding: 0 0.5em;
+    text-align: left;
+    .twitter {
+      display: inline-block;
+      float: right;
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        font-style: italic;
+        border: 0;
+      }
+    }
+  }
+  .header {
+    height: 48px;
+    width: calc(~"100% - 1em");
+    padding: 0 0.5em;
+    .twitter {
+      display: inline-block;
+      float: right;
+      a {
+        color: #ffffff;
+        text-decoration: none;
+        font-style: italic;
+        border: 0;
+      }
+    }
+  }
+
+  &.outline {
+    div {
+      background: transparent no-repeat center;
+      background-size: 50%;
+    }
+
+    &#dev {
+      div {
+        background-image: url('../pictures/dev.png');
+      }
+    }
+    &#uat {
+      div {
+        background-image: url('../pictures/uat.png');
+      }
+    }
+    &#perf {
+      div {
+        background-image: url('../pictures/perf.png');
+      }
+    }
+    &#preprod {
+      div {
+        background-image: url('../pictures/pre_prod.png');
+      }
+    }
+    &#prod {
+      div {
+        background-image: url('../pictures/kashing.jpg');
+      }
+    }
+  }
+
+  &#part1 {
+    background-image: url('../pictures/part1.jpg')
+  }
+  &#part2 {
+    background-image: url('../pictures/part2.jpg')
+  }
+  &#part3 {
+    background-image: url('../pictures/part3.jpg')
+  }
+  &#part4 {
+    background-image: url('../pictures/part4.jpg')
+  }
+  &#part5 {
+    background-image: url('../pictures/part5.jpg')
+  }
+  &#part6 {
+    background-image: url('../pictures/part6.jpg')
+  }
+  &#part7 {
+    background-image: url('../pictures/part7.jpg')
+  }
+}

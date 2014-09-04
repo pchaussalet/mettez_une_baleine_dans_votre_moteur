@@ -1,0 +1,101 @@
+h3,
+.author,
+.footer,
+.header {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.slide {
+  color: #FFFFFF;
+  background: no-repeat center;
+  background-size: cover !important;
+  background-color: #ffffff;
+  text-align: center;
+}
+.slide:after {
+  text-align: right;
+  padding-bottom: 0.25em;
+  padding-right: 0.25em;
+}
+.slide h3 {
+  font-size: 74px;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 20%;
+  text-align: center;
+}
+.slide ul > li:before {
+  content: '';
+}
+.slide .footer {
+  height: 48px;
+  width: calc(100% - 1em);
+  position: absolute;
+  bottom: -48px;
+  padding: 0 0.5em;
+  text-align: left;
+}
+.slide .footer .twitter {
+  display: inline-block;
+  float: right;
+}
+.slide .footer .twitter a {
+  color: #ffffff;
+  text-decoration: none;
+  font-style: italic;
+  border: 0;
+}
+.slide .header {
+  height: 48px;
+  width: calc(100% - 1em);
+  padding: 0 0.5em;
+}
+.slide .header .twitter {
+  display: inline-block;
+  float: right;
+}
+.slide .header .twitter a {
+  color: #ffffff;
+  text-decoration: none;
+  font-style: italic;
+  border: 0;
+}
+.slide.outline div {
+  background: transparent no-repeat center;
+  background-size: 50%;
+}
+.slide.outline#dev div {
+  background-image: url('../pictures/dev.png');
+}
+.slide.outline#uat div {
+  background-image: url('../pictures/uat.png');
+}
+.slide.outline#perf div {
+  background-image: url('../pictures/perf.png');
+}
+.slide.outline#preprod div {
+  background-image: url('../pictures/pre_prod.png');
+}
+.slide.outline#prod div {
+  background-image: url('../pictures/kashing.jpg');
+}
+.slide#part1 {
+  background-image: url('../pictures/part1.jpg');
+}
+.slide#part2 {
+  background-image: url('../pictures/part2.jpg');
+}
+.slide#part3 {
+  background-image: url('../pictures/part3.jpg');
+}
+.slide#part4 {
+  background-image: url('../pictures/part4.jpg');
+}
+.slide#part5 {
+  background-image: url('../pictures/part5.jpg');
+}
+.slide#part6 {
+  background-image: url('../pictures/part6.jpg');
+}
+.slide#part7 {
+  background-image: url('../pictures/part7.jpg');
+}
