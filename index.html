@@ -11,10 +11,7 @@
     <link rel="prefetch" type="application/l10n" href="l10n.ini" />
     <link rel="shortcut icon" href="pictures/favicon.png">
 </head>
-<body class="list">
-	<header class="caption">
-		<h1 data-l10n-id="main-title"></h1>
-	</header>
+<body>
     <section class="slide cover main" id="cover" style="background-image: url('pictures/cover.jpg')">
         <script defer>
             var setLang = function(lng) {
@@ -105,5 +102,12 @@
 
     <div class="progress"><div></div></div>
 	<script src="shower/shower.min.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', function() {
+            if (shower.isListMode()) {
+                shower.enterSlideMode();
+            }
+        });
+    </script>
 </body>
 </html>
