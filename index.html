@@ -12,102 +12,115 @@
     <link rel="shortcut icon" href="pictures/favicon.png">
 </head>
 <body>
-    <section class="slide cover main" id="cover" style="background-image: url('pictures/cover.jpg')">
-        <script defer>
-            var setLang = function(lng) {
-                document.webL10n.setLanguage(lng);
-                localStorage.lng = lng;
-            };
-            var startup = true;
-            window.addEventListener('localized', function() {
-                document.documentElement.lang = document.webL10n.getLanguage();
-                document.documentElement.dir = document.webL10n.getDirection();
-                if (startup) {
-                    startup = false;
-                    setLang('fr');
-                }
-            }, false);
-        </script>
+	<section id="root">
+	</section>
+  <div class="progress"><div></div></div>
 
-        <h3 data-l10n-id="main-title"></h3>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
+	<script src="js/jquery.min.js"></script>
+	<script defer>
+			var setLang = function(lng) {
+					document.webL10n.setLanguage(lng);
+					localStorage.lng = lng;
+			};
 
-    <section class="slide cover title" id="part1">
-        <h3 data-l10n-id="part-1" style="font-size: 74px"></h3>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
-    <section class="slide outline">
-        <p data-l10n-id="part-1" class="header"></p>
-        <img src="pictures/docker.png"/>
-        <img src="pictures/archi.png"/>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
+			var hasPrefix = function(prefix) {
+				return function(x) {
+					return x.indexOf(prefix) == 0;
+				}
+			}
 
-    <section class="slide cover title" id="part2">
-        <h3 data-l10n-id="part-2"></h3>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
-    <section class="slide outline" id="dev">
-        <p data-l10n-id="part-2" class="header"></p>
-        <div></div>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
+			var doesNotContains = function(pattern) {
+				return function(x) {
+					return x.indexOf(pattern) == -1;
+				}
+			}
 
-    <section class="slide cover title" id="part3">
-        <h3 data-l10n-id="part-3" style="font-size: 74px"></h3>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
-    <section class="slide outline" id="uat">
-        <p data-l10n-id="part-3" class="header"></p>
-        <div></div>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
+			function getCover(section, title) {
+				return $('<section/>')
+					.addClass(section)
+					.addClass('slide')
+					.addClass('cover')
+					.addClass('title')
+					.append(
+						$('<h3/>').append(title)
+					)
+			}
 
-    <section class="slide cover title" id="part4">
-        <h3 data-l10n-id="part-4" style="font-size: 69px"></h3>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
-    <section class="slide outline" id="perf">
-        <p data-l10n-id="part-4" class="header"></p>
-        <div></div>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
+			function getSlide(section, part, content) {
+				console.log(arguments);
+				var list = $('<ul/>');
+				var items = Object.keys(content).filter(hasPrefix('item'));
+				console.log(items);
+				for (var i=0; i<items.length; i++) {
+					console.log(items[i], content[items[i]]);
+					list.append(
+						$('<li>').append(content[items[i]])
+					)
+				}
 
-    <section class="slide cover title" id="part5">
-        <h3 data-l10n-id="part-5" style="font-size: 60px"></h3>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
-    <section class="slide outline" id="preprod">
-        <p data-l10n-id="part-5" class="header"></p>
-        <div></div>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
+				return $('<section/>')
+					.addClass(section)
+					.addClass(part)
+					.addClass('slide')
+					.append(
+							$('<h4/>').append(content.title)
+					)
+					.append(list);
+			}
 
-    <section class="slide cover title" id="part6">
-        <h3 data-l10n-id="part-6"></h3>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
-    <section class="slide outline" id="prod">
-        <p data-l10n-id="part-6" class="header"></p>
-        <div></div>
-        <p class="footer"><span data-l10n-id="main-title"></span><span class="twitter"><a data-l10n-id="author-twitter" href="https://twitter.com/pchaussalet" rel="me" class="twitter"></a></span></p>
-    </section>
-
-    <section class="slide cover title" id="part7">
-        <h3 data-l10n-id="part-7"></h3>
-        <p class="footer"><span>Au secours, mon portable part en prod !</span><span class="twitter"><img src="pictures/twitter.png"><a href="https://twitter.com/pchaussalet" rel="me" class="twitter">@pchaussalet</a></span></p>
-    </section>
-
-
-    <div class="progress"><div></div></div>
-	<script src="shower/shower.min.js"></script>
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
-            if (shower.isListMode()) {
-                shower.enterSlideMode();
-            }
-        });
-    </script>
+			var startup = true;
+			window.addEventListener('localized', function() {
+					document.documentElement.lang = document.webL10n.getLanguage();
+					document.documentElement.dir = document.webL10n.getDirection();
+					if (startup) {
+							startup = false;
+							setLang('fr');
+							setTimeout(function() {
+								var l10n = document.webL10n;
+								var data = l10n.getData();
+								console.log(data);
+								var keys = Object.keys(data);
+								var sections = keys.filter(hasPrefix('section-')).filter(doesNotContains('.part-'));
+								var root = $('#root');
+								root.empty();
+								root.append(getCover('main', data.main.title));
+								for (var i=0; i < sections.length; i++) {
+									var section = sections[i];
+									var title = data[section].title;
+									var parts = keys.filter(hasPrefix(section+'.part-'));
+									var contentKey = data[section].content;
+									root.append(getCover(section, title));
+									for (var j=0; j<parts.length; j++) {
+										var part = parts[j];
+										root.append(getSlide(section, part.replace(section+'.', ''), data[part]));
+									}
+								}
+								console.log(data.main.title);
+								var footer = $('<p/>')
+									.addClass('footer')
+									.append(
+										$('<span/>').append(data.main.title)
+									)
+									.append(
+										$('<span/>')
+											.addClass('twitter')
+											.append(
+												$('<a/>')
+													.attr('rel', 'me')
+													.addClass('twitter')
+													.append('@')
+													.append(
+														$('<span/>').append(data.author.twitter)
+													)
+											)
+									);
+								$('section.slide').append(footer);
+								$('a.twitter').attr('href', 'https://twitter.com/' + l10n.get('author-twitter'));
+								shower = shower.init();
+							}, 500);
+					}
+			}, false);
+  </script>
+	<script src="shower/shower.js"></script>
 </body>
 </html>

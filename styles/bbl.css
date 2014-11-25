@@ -1,4 +1,11 @@
+.contains {
+  background-size: contain !important;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
 h3,
+h4,
+ul,
 .author,
 .footer,
 .header {
@@ -22,6 +29,27 @@ h3,
   margin-left: 10%;
   margin-top: 20%;
   text-align: center;
+}
+.slide h4,
+.slide ul {
+  width: 90%;
+  margin-left: 5%;
+}
+.slide h4 {
+  font-size: 60px;
+  margin-top: 10%;
+  text-align: center;
+  line-height: 1.25em;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.125em;
+}
+.slide ul {
+  text-align: left;
+  padding-left: 33%;
+  width: 57%;
+}
+.slide ul li {
+  font-size: 40px;
 }
 .slide ul > li:before {
   content: '';
@@ -59,43 +87,57 @@ h3,
   font-style: italic;
   border: 0;
 }
-.slide.outline div {
-  background: transparent no-repeat center;
-  background-size: 50%;
+.slide.cover {
+  background-color: #ffffff;
 }
-.slide.outline#dev div {
-  background-image: url('../pictures/dev.png');
+.slide.main.cover {
+  background-image: url('../pictures/main_cover.png');
+  background-size: contain !important;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
-.slide.outline#uat div {
-  background-image: url('../pictures/uat.png');
+.slide.section-1.cover {
+  background-image: url('../pictures/section-1_cover.jpg');
 }
-.slide.outline#perf div {
-  background-image: url('../pictures/perf.png');
+.slide.section-1.part-1 {
+  background-image: url('../pictures/section-1_part-1.png');
+  background-size: contain !important;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
-.slide.outline#preprod div {
-  background-image: url('../pictures/pre_prod.png');
+.slide.section-1.part-2 {
+  background-image: url('../pictures/section-1_part-2.jpg');
 }
-.slide.outline#prod div {
-  background-image: url('../pictures/kashing.jpg');
+.slide.section-1.part-3 {
+  background-image: url('../pictures/section-1_part-3.jpg');
 }
-.slide#part1 {
-  background-image: url('../pictures/part1.jpg');
+.slide.section-1.part-4 {
+  background-image: url('../pictures/section-1_part-4.jpg');
+  background-size: contain !important;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
-.slide#part2 {
-  background-image: url('../pictures/part2.jpg');
+.slide.section-2.cover {
+  background-image: url('../pictures/section-2_cover.jpg');
 }
-.slide#part3 {
-  background-image: url('../pictures/part3.jpg');
+.slide.section-2.part-1 {
+  background-image: url('../pictures/section-2_part-1.jpg');
+  background-size: contain !important;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }
-.slide#part4 {
-  background-image: url('../pictures/part4.jpg');
+.slide.section-2.part-1 h4 {
+  font-size: 48px;
 }
-.slide#part5 {
-  background-image: url('../pictures/part5.jpg');
+.slide.section-2.part-2 {
+  background-image: url('../pictures/section-2_part-2.jpg');
 }
-.slide#part6 {
-  background-image: url('../pictures/part6.jpg');
+.slide.section-2.part-3 {
+  background-image: url('../pictures/section-2_part-3.jpg');
 }
-.slide#part7 {
-  background-image: url('../pictures/part7.jpg');
+.slide.section-2.part-4 {
+  background-image: url('../pictures/section-2_part-4.jpg');
+  background-size: contain !important;
+  background-position: 50%;
+  background-repeat: no-repeat;
 }

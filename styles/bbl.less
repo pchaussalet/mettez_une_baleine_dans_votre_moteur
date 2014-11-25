@@ -1,4 +1,10 @@
-h3, .author, .footer, .header {
+.contains {
+  background-size: contain !important;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+h3, h4, ul, .author, .footer, .header {
   background-color: rgba(0, 0, 0, 0.7);
 }
 .slide {
@@ -19,6 +25,27 @@ h3, .author, .footer, .header {
     margin-top: 20%;
     text-align: center;
   }
+  h4, ul {
+    width: 90%;
+    margin-left: 5%;
+  }
+  h4 {
+    font-size: 60px;
+    margin-top: 10%;
+    text-align: center;
+    line-height: 1.25em;
+    padding-bottom: 0.25em;
+    margin-bottom: 0.125em;
+  }
+  ul {
+    text-align: left;
+    padding-left: 33%;
+    width: 90%-33%;
+    li {
+      font-size: 40px;
+    }
+  }
+
   ul>li:before {
     content: '';
   }
@@ -56,58 +83,57 @@ h3, .author, .footer, .header {
     }
   }
 
-  &.outline {
-    div {
-      background: transparent no-repeat center;
-      background-size: 50%;
-    }
+  &.cover {
+    background-color: #ffffff;
+  }
 
-    &#dev {
-      div {
-        background-image: url('../pictures/dev.png');
-      }
-    }
-    &#uat {
-      div {
-        background-image: url('../pictures/uat.png');
-      }
-    }
-    &#perf {
-      div {
-        background-image: url('../pictures/perf.png');
-      }
-    }
-    &#preprod {
-      div {
-        background-image: url('../pictures/pre_prod.png');
-      }
-    }
-    &#prod {
-      div {
-        background-image: url('../pictures/kashing.jpg');
-      }
+  &.main {
+    &.cover {
+      background-image: url('../pictures/main_cover.png');
+      .contains;
     }
   }
 
-  &#part1 {
-    background-image: url('../pictures/part1.jpg')
+  &.section-1 {
+    &.cover {
+      background-image: url('../pictures/section-1_cover.jpg');
+    }
+    &.part-1 {
+      background-image: url('../pictures/section-1_part-1.png');
+      .contains;
+    }
+    &.part-2 {
+      background-image: url('../pictures/section-1_part-2.jpg');
+    }
+    &.part-3 {
+      background-image: url('../pictures/section-1_part-3.jpg');
+    }
+    &.part-4 {
+      background-image: url('../pictures/section-1_part-4.jpg');
+      .contains;
+    }
   }
-  &#part2 {
-    background-image: url('../pictures/part2.jpg')
-  }
-  &#part3 {
-    background-image: url('../pictures/part3.jpg')
-  }
-  &#part4 {
-    background-image: url('../pictures/part4.jpg')
-  }
-  &#part5 {
-    background-image: url('../pictures/part5.jpg')
-  }
-  &#part6 {
-    background-image: url('../pictures/part6.jpg')
-  }
-  &#part7 {
-    background-image: url('../pictures/part7.jpg')
+
+  &.section-2 {
+    &.cover {
+      background-image: url('../pictures/section-2_cover.jpg');
+    }
+    &.part-1 {
+      background-image: url('../pictures/section-2_part-1.jpg');
+      .contains;
+      h4 {
+        font-size: 48px;
+      }
+    }
+    &.part-2 {
+      background-image: url('../pictures/section-2_part-2.jpg');
+    }
+    &.part-3 {
+      background-image: url('../pictures/section-2_part-3.jpg');
+    }
+    &.part-4 {
+      background-image: url('../pictures/section-2_part-4.jpg');
+      .contains;
+    }
   }
 }
